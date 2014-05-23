@@ -10,6 +10,8 @@
 #                                                                              #
 #******************************************************************************#
 
+.PHONY: all libft clean fclean re
+
 NAME = wolf3d
 
 CFLAGS = -Wall -Wextra -Werror -pedantic -std=c89
@@ -84,5 +86,3 @@ fclean: clean
 	@echo "\033[0;m\c"
 
 re: fclean all
-
-.PHONY: all libft clean fclean re
