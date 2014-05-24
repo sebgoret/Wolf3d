@@ -67,20 +67,24 @@ $(NAME): $(DLIB)libft.a $(OBJ)
 	@echo "\033[0;m\c"
 
 libft:
-	@echo "Compilation des sources de la lib:"
+	@echo "Compilation des objets de la lib:"
 	@make -C $(DLIB)
 
-clean:
-	@echo "Suppression des objets de la libft:"
+libclean:
+	@echo "Suppression des objets de la librairie libft.a:"
 	@make -C $(DLIB) clean
+
+libfclean:
+	@echo "Suppression de la librairie libft.a:"
+	@make -C $(DLIB) fclean
+
+clean:
 	@echo "Suppression des objets du projet:\033[0;31m"
 	$(RMF) $(OBJ)
 	@echo "\033[0;m\c"
 	@$(RMD) $(DOBJ)
 
 fclean: clean
-	@echo "Suppression de la librairie libft.a:"
-	@make -C $(DLIB) fclean
 	@echo "Suppression de l'executable\033[0;31m"
 	$(RMF) $(NAME)
 	@echo "\033[0;m\c"
